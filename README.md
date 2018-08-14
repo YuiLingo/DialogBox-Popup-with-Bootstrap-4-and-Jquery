@@ -1,8 +1,9 @@
 # Bootstrap-4-DialogBox-Js
 DialogBox Plugin with Bootstrap 4 Modal + Jquery Extended
 
-[Bootstrap Setup Documentation](https://jekyllrb.com/docs/home/).
+[Bootstrap Setup Documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/).
 
+Dialog Box Documentation and Demo [here](https://yuilingo.github.io/Bootstrap-4-DialogBox-Js/).
 ## Usage
 Loading Indicator
 
@@ -32,7 +33,7 @@ $.DialogBox().ShowSuccessDialogBox({
 
  $.DialogBox().ShowDialogBox({
     Type: 'dark',
-    Title: 'Dark Message Box',
+    Title: 'Dark label Dialog box',
     Message: 'This show custom message and function callback.',
     Size: 'modal-lg',
     Buttons:[{
