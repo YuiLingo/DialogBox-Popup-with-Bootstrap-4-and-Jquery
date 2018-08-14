@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+    .highlight {
+        padding: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-color: #f8f9fa;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+    .k {
+        color: #069;
+    }
+    .kd {
+        color: #069;
+    }
+    .s1 {
+        color: #c30;
+    }
+</style>
+    <title>Dialog Box Service - Jquery and Bootstrap Modal</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">Dialog Box Js with Bootstrap and Jquery Extended</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Loading Indicator
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Show / Hide Loading Indicator</h5>
+                        <p class="card-text">Just Required Bootstrap 4 and Jquery-3</p>
+                        <figure class="highlight">
+                            <pre><code class="language-js" data-lang="js"><span class="p">$.DialogBox().ShowLoadingIndicator();</span><br/><span class="k">setTimeout</span><span class="p">( </span><span class="kd">function</span><span class="p"> () {</span><br/><span class="p">   $.DialogBox().HideLoadingIndicator();</span><br/><span class="p">},</span> <span class="s1">5000</span><span class="p">);</span></code></pre>
+                        </figure>
+                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Loading')">Click Me</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Dialog Box
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Dialog Box with Different Roles</h5>
+                        <p class="card-text">There are available 5 default Roles Dialog Box Service.</p>
+                        <figure class="highlight">
+                            <pre><code class="language-js" data-lang="js"><span class="p">$.DialogBox().ShowDialogBox();</span><br/><span class="p">$.DialogBox().ShowConfirmDialogBox();</span><br/><span class="p">$.DialogBox().ShowAlertDialogBox();</span><br/><span class="p">$.DialogBox().ShowWarningDialogBox();</span><br/><span class="p">$.DialogBox().ShowSuccessDialogBox();</span><br/></code></pre>
+                        </figure>
+                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Info')">Click Me (Information)</button>
+                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Confirm')">Click Me (Confirm)</button>
+                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Alert')">Click Me (Alert)</button>
+                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Warning')">Click Me (Warning)</button>
+                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Success')">Click Me (Success)</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Custom Dialog Box
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Dialog Box with Custom Config</h5>
+                        <p class="card-text">There are provide some config to custom dialog box output</p>
+                        <figure class="highlight">
+                            <pre><code class="language-js" data-lang="js"><span class="p">$.DialogBox().ShowSuccessDialogBox({</span><br/><span class="p">  Title: </span><span class="s1">'Success'</span>,<br/><span class="p">  Message: </span><span class="s1">'This show custom message and function callback.'</span>,<br/><span class="p">  CallBack: </span><span class="kd">function</span><span class="p"> (</span><span class="s1">result</span><span class="p"> ) {</span><br/><span class="p">     if(</span><span class="s1"> result</span><span class="p"> == </span><span class="s1">true</span><span class="p"> ) {</span><br/><span class="k">      alert</span><span class="p">( </span><span class="s1">result</span><span class="p">);</span><br/><span class="p">     }</span><br/><span class="p">  }</span><br/><span class="p">});</span></code></pre>
+                        </figure>
+                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Success','Custom')">Click Me with Custom</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="DialogBoxService.js"></script>
+    <script>
+    function dialog(expression, command = '') {
+        switch(expression) {
+            case 'Loading':
+                $.DialogBox().ShowLoadingIndicator();
+                setTimeout(function () {
+                    $.DialogBox().HideLoadingIndicator();
+                }, 5000);
+                break;
+            case 'Info':
+                $.DialogBox().ShowDialogBox();
+                break;
+            case 'Confirm':
+                $.DialogBox().ShowConfirmDialogBox();
+                break;
+            case 'Alert':
+                $.DialogBox().ShowAlertDialogBox();
+                break;
+            case 'Warning':
+                $.DialogBox().ShowWarningDialogBox();
+                break;
+            case 'Success':
+                if(command != '')
+                {
+                    $.DialogBox().ShowSuccessDialogBox({
+                        Title: 'Success',
+                        Message: 'This show custom message and function callback.',
+                        CallBack:function(result){
+                            if(result == true){
+                                alert(result);
+                            }
+                        }
+                    });
+                }
+                else
+                {
+                    $.DialogBox().ShowSuccessDialogBox();
+                }
+                break;
+            default:
+                dialog('Loading');
+        }
+
+        }
+    </script>
+  </body>
+</html>
