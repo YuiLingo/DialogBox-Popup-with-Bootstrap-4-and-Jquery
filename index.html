@@ -15,6 +15,9 @@
         background-color: #f8f9fa;
         -ms-overflow-style: -ms-autohiding-scrollbar;
     }
+    .c {
+        color: #0a8;
+    }
     .k {
         color: #069;
     }
@@ -28,12 +31,31 @@
     <title>Dialog Box Service - Jquery and Bootstrap Modal</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Dialog Box Js with Bootstrap and Jquery Extended</a>
     </nav>
+    <br/>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <div class="card">
+                        <div class="card-header">
+                            Dialog Box
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dialog Box with Different Roles</h5>
+                            <p class="card-text">There are available 5 default Roles Dialog Box Service.</p>
+                            <figure class="highlight">
+                                <pre><code class="language-js" data-lang="js"><span class="p">$.DialogBox().ShowDialogBox();</span><br/><span class="p">$.DialogBox().ShowConfirmDialogBox();</span><br/><span class="p">$.DialogBox().ShowAlertDialogBox();</span><br/><span class="p">$.DialogBox().ShowWarningDialogBox();</span><br/><span class="p">$.DialogBox().ShowSuccessDialogBox();</span><br/></code></pre>
+                            </figure>
+                            <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Info')">Click Me</button>
+                            <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Confirm')">Click Me (Confirm)</button>
+                            <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Alert')">Click Me (Alert)</button>
+                            <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Warning')">Click Me (Warning)</button>
+                            <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Success')">Click Me (Success)</button>
+                        </div>
+                </div>               
+                <br/>
                 <div class="card">
                     <div class="card-header">
                         Loading Indicator
@@ -42,39 +64,86 @@
                         <h5 class="card-title">Show / Hide Loading Indicator</h5>
                         <p class="card-text">Just Required Bootstrap 4 and Jquery-3</p>
                         <figure class="highlight">
-                            <pre><code class="language-js" data-lang="js"><span class="p">$.DialogBox().ShowLoadingIndicator();</span><br/><span class="k">setTimeout</span><span class="p">( </span><span class="kd">function</span><span class="p"> () {</span><br/><span class="p">   $.DialogBox().HideLoadingIndicator();</span><br/><span class="p">},</span> <span class="s1">5000</span><span class="p">);</span></code></pre>
+                            <pre><code class="language-js" data-lang="js"><span class="p">$.DialogBox().ShowLoadingIndicator();</span><br/><span class="k">setTimeout</span><span class="p">( </span><span class="kd">function</span><span class="p"> () {</span><br/><span class="p">   $.DialogBox().HideLoadingIndicator();</span><br/><span class="p">},</span> <span class="s1">3000</span><span class="p">);</span></code></pre>
                         </figure>
                         <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Loading')">Click Me</button>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        Dialog Box
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Dialog Box with Different Roles</h5>
-                        <p class="card-text">There are available 5 default Roles Dialog Box Service.</p>
-                        <figure class="highlight">
-                            <pre><code class="language-js" data-lang="js"><span class="p">$.DialogBox().ShowDialogBox();</span><br/><span class="p">$.DialogBox().ShowConfirmDialogBox();</span><br/><span class="p">$.DialogBox().ShowAlertDialogBox();</span><br/><span class="p">$.DialogBox().ShowWarningDialogBox();</span><br/><span class="p">$.DialogBox().ShowSuccessDialogBox();</span><br/></code></pre>
-                        </figure>
-                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Info')">Click Me (Information)</button>
-                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Confirm')">Click Me (Confirm)</button>
-                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Alert')">Click Me (Alert)</button>
-                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Warning')">Click Me (Warning)</button>
-                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Success')">Click Me (Success)</button>
-                    </div>
-                </div>
+                <br/>
                 <div class="card">
                     <div class="card-header">
                         Custom Dialog Box
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Dialog Box with Custom Config</h5>
-                        <p class="card-text">There are provide some config to custom dialog box output</p>
+                        <h5 class="card-title">Dialog Box with partial custom config</h5>
+                        <p class="card-text">Sample of Custom config with success dialog box</p>
                         <figure class="highlight">
                             <pre><code class="language-js" data-lang="js"><span class="p">$.DialogBox().ShowSuccessDialogBox({</span><br/><span class="p">  Title: </span><span class="s1">'Success'</span>,<br/><span class="p">  Message: </span><span class="s1">'This show custom message and function callback.'</span>,<br/><span class="p">  CallBack: </span><span class="kd">function</span><span class="p"> (</span><span class="s1">result</span><span class="p"> ) {</span><br/><span class="p">     if(</span><span class="s1"> result</span><span class="p"> == </span><span class="s1">true</span><span class="p"> ) {</span><br/><span class="k">      alert</span><span class="p">( </span><span class="s1">result</span><span class="p">);</span><br/><span class="p">     }</span><br/><span class="p">  }</span><br/><span class="p">});</span></code></pre>
                         </figure>
                         <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Success','Custom')">Click Me with Custom</button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Dialog Box with fully custom config</h5>
+                        <p class="card-text">There are provide some config to custom dialog box stype and callback</p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Options</th>
+                                <th scope="col">Values</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th scope="row">1</th>
+                                <td>Type</td>
+                                <td>
+                                    primary<br/>
+                                    secondary<br/>
+                                    success<br/>
+                                    warning<br/>
+                                    danger<br/>
+                                    info<br/>
+                                    light<br/>
+                                    dark<br/>
+                                </td>
+                                </tr>
+                                <tr>
+                                <th scope="row">2</th>
+                                <td>Size</td>
+                                <td>
+                                    modal-lg<br/>
+                                    modal-sm<br/>
+                                    <span class="c">default is normal size</span>
+                                </td>
+                                </tr>
+                                <tr>
+                                <th scope="row">3</th>
+                                <td>Title</td>
+                                <td>
+                                    <span class="c">your custom title</span>
+                                </td>
+                                </tr>
+                                <tr>
+                                <th scope="row">4</th>
+                                <td>Message</td>
+                                <td>
+                                    <span class="c">your custom message</span>
+                                </td>
+                                </tr>
+                                <tr>
+                                <th scope="row">4</th>
+                                <td>Buttons</td>
+                                <td>
+                                    <pre><span class="c">[{<br/>    label: 'Click Me',<br/>    cssClass: 'btn-light',<br/>    action: function (obj ) {<br/>      alert('inside button callback' );<br/>      obj.modal.HideDialog();<br/>    }<br/>}]</span></pre>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <figure class="highlight">
+                            <pre><code class="language-js" data-lang="js"><span class="p">$.DialogBox().ShowDialogBox({</span><br/><span class="p">  Type: </span><span class="s1">'dark'</span>,<br/><span class="p">  Title: </span><span class="s1">'Dark label Dialog box'</span>,<br/><span class="p">  Message: </span><span class="s1">'This show custom message and function callback.'</span>,<br/><span class="p">  Size: </span><span class="s1">'modal-lg'</span>,<br/><span class="p">  Buttons: [{</span><br/><span class="p">    label: </span><span class="s1">'Click Me'</span>,<br/><span class="p">    cssClass: </span><span class="s1">'btn-light'</span>,<br/><span class="p">    action: </span><span class="kd">function</span><span class="p"> (</span><span class="s1">obj</span><span class="p"> ) {</span><br/><span class="c">       // callback will pass dialogbox instance object, remember must call HideDialog to close Dialog before callback end</span><br/><span class="p">       alert(</span><span class="s1">'inside button callback'</span><span class="p"> )<br/><span class="p">       obj.modal.HideDialog(); <span class="p">    }</span><br/><span class="p">  }]</span><br/><span class="p">});</span></code></pre>
+                        </figure>
+                        <button type="button" class="btn btn-info btn-md" id="myBtn" onclick="dialog('Info','Custom')">Click Me with Custom</button>
                     </div>
                 </div>
             </div>
@@ -93,10 +162,30 @@
                 $.DialogBox().ShowLoadingIndicator();
                 setTimeout(function () {
                     $.DialogBox().HideLoadingIndicator();
-                }, 5000);
+                }, 3000);
                 break;
             case 'Info':
-                $.DialogBox().ShowDialogBox();
+                if(command != '')
+                {
+                    $.DialogBox().ShowDialogBox({
+                        Type: 'dark',
+                        Title: 'Dark label Dialog box',
+                        Message: 'This show custom message and function callback.',
+                        Size: 'modal-lg',
+                        Buttons: [{
+                            label: 'Click Me',
+                            cssClass: 'btn-light',
+                            action: function (obj ) {
+                            // callback will pass dialogbox instance object, remember must call HideDialog to close Dialog before callback end
+                            alert('inside button callback' )
+                            obj.modal.HideDialog();     }
+                        }],
+                    });
+                }
+                else
+                {
+                    $.DialogBox().ShowDialogBox();
+                }
                 break;
             case 'Confirm':
                 $.DialogBox().ShowConfirmDialogBox();
