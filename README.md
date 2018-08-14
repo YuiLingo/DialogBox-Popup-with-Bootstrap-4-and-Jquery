@@ -3,7 +3,7 @@ DialogBox Plugin with Bootstrap 4 Modal + Jquery Extended
 
 [Bootstrap Setup Documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/).
 
-Dialog Box Documentation and Demo [here](https://yuilingo.github.io/Bootstrap-4-DialogBox-Js/).
+Dialog Box Documentation and Demo [here](https://yuilingo.github.io/DialogBox-Popup-with-Bootstrap-4-and-Jquery/).
 ## Usage
 Loading Indicator
 
